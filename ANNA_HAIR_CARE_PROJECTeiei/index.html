@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANNA HAIR CARE</title>
+<style>
+:root{--pink:#f7dce5;--rose:#b85d7b;--ink:#382a30;--cream:#fffaf7;--line:#eadde1}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Tahoma",sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(120deg,#f8e2e9,#fff5f0);padding:28px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-size:24px;font-weight:800;letter-spacing:1px;color:#8f3f5c}.tag{font-size:13px;color:#795d68}
+nav a{color:#6e4655;text-decoration:none;margin-left:18px;font-weight:600}
+.hero{padding:55px 6%;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.12;margin:0 0 15px}.hero p{max-width:570px;color:#715e65}
+.hero-art{min-height:250px;border-radius:28px;background:radial-gradient(circle at 50% 35%,#fff 0 18%,transparent 19%),linear-gradient(145deg,#f2cbd8,#f9e9df);display:grid;place-items:center}
+.bottle{width:120px;height:190px;background:linear-gradient(90deg,#d6a0b0,#f7dbe4,#c98da1);border-radius:22px 22px 28px 28px;position:relative;box-shadow:0 18px 35px #9d607344}
+.bottle:before{content:"";position:absolute;width:48px;height:28px;background:#72505a;top:-22px;left:36px;border-radius:7px 7px 2px 2px}
+.bottle:after{content:"ANNA\\A HAIR CARE";white-space:pre;position:absolute;top:72px;left:0;right:0;text-align:center;font-size:12px;font-weight:bold;color:#704756;line-height:1.7}
+section{padding:28px 6%}.section-title{font-size:28px;margin:0 0 18px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 8px 24px #5b34400b}
+.product-art{height:155px;border-radius:15px;background:#f8e9ee;display:grid;place-items:center;margin-bottom:14px}
+.product-art .bottle{transform:scale(.68);transform-origin:center}
+.price{font-size:20px;font-weight:800;color:var(--rose)}button{border:0;border-radius:12px;padding:11px 16px;background:var(--rose);color:white;font-weight:700;cursor:pointer}
+button.secondary{background:#f1e4e8;color:#75495a}button:disabled{opacity:.5;cursor:not-allowed}
+input,textarea,select{width:100%;padding:11px;border:1px solid #ddcbd2;border-radius:10px;font:inherit;margin:5px 0 12px;background:white}
+label{font-weight:600;font-size:14px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin:15px 0}
+.order{border-top:1px solid var(--line);padding:13px 0}.muted{color:#806e75;font-size:13px}.pill{display:inline-block;background:#f7e8ed;color:#8c4962;padding:4px 9px;border-radius:99px;font-size:12px}
+footer{text-align:center;padding:30px;color:#806e75;background:#f8edf0;margin-top:35px}
+@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:35px}.grid2{grid-template-columns:1fr}nav a{margin-left:8px}}
+</style>
+</head>
+<body>
+<header><div><div class="brand">ANNA HAIR CARE</div><div class="tag">ดูแลเส้นผมอย่างอ่อนโยนในทุกวัน</div></div><nav><a href="#products">สินค้า</a><a href="#order">สั่งซื้อ</a><a href="#manage">จัดการคำสั่งซื้อ</a></nav></header>
+<main>
+<section class="hero"><div><span class="pill">YOUR DAILY HAIR CARE</span><h1>ผมนุ่มสวย<br>เริ่มต้นที่การดูแล</h1><p>เลือกแชมพูที่เหมาะกับเส้นผมของคุณ พร้อมสั่งซื้อได้ง่าย ๆ ผ่าน ANNA HAIR CARE</p><a href="#products"><button>เลือกซื้อสินค้า</button></a></div><div class="hero-art"><div class="bottle"></div></div></section>
+<section id="products"><h2 class="section-title">สินค้าของเรา</h2><div class="products" id="productList"></div></section>
+<section id="order"><h2 class="section-title">แบบฟอร์มสั่งซื้อ</h2><div class="panel"><form id="orderForm">
+<div class="grid2"><div><label>ชื่อ-นามสกุล</label><input id="customer" required placeholder="ชื่อผู้รับสินค้า"></div><div><label>เบอร์โทรศัพท์</label><input id="phone" required placeholder="08xxxxxxxx" inputmode="tel"></div></div>
+<label>ที่อยู่จัดส่ง</label><textarea id="address" required rows="3" placeholder="บ้านเลขที่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์"></textarea>
+<label>เลือกสินค้า</label><select id="sku"><option value="SH001">SH001 - แชมพูสมุนไพร 159 บาท</option><option value="SH002">SH002 - แชมพูอาร์แกนออยล์ 199 บาท</option></select>
+<div class="grid2"><div><label>จำนวน</label><input id="qty" type="number" min="1" value="1" required></div><div><label>วิธีชำระเงิน</label><select id="payment"><option>เก็บเงินปลายทาง</option><option>โอนเงิน</option></select></div></div>
+<button type="submit">ยืนยันคำสั่งซื้อ</button><p class="muted">ตัวอย่างเว็บไซต์เพื่อการเรียน ระบบนี้ยังไม่เชื่อมต่อการชำระเงินจริง</p>
+</form><div id="orderMessage"></div></div></section>
+<section id="manage"><h2 class="section-title">ระบบจัดการคำสั่งซื้อ</h2><p class="muted">รายการคำสั่งซื้อที่บันทึกไว้ในเบราว์เซอร์เครื่องนี้ ใช้สาธิตขั้นตอนรับออเดอร์ / Picking / Packing / จัดส่ง</p><div class="panel"><button class="secondary" onclick="renderOrders()">รีเฟรชรายการ</button><div id="orders"></div></div></section>
+</main>
+<footer>© 2026 ANNA HAIR CARE · Student project</footer>
+<script>
+const PRODUCTS=[
+ {sku:"SH001",name:"แชมพูสมุนไพร",detail:"สูตรสมุนไพร เหมาะสำหรับการดูแลเส้นผมในชีวิตประจำวัน",price:159},
+ {sku:"SH002",name:"แชมพูอาร์แกนออยล์",detail:"สูตรอาร์แกนออยล์ ช่วยให้เส้นผมดูนุ่มลื่น",price:199}
+];
+const API_URL=""; // วาง Apps Script Web App URL ในเครื่องหมายคำพูดหลัง Deploy
+const money=n=>Number(n).toLocaleString("th-TH")+" บาท";
+function renderProducts(){document.getElementById("productList").innerHTML=PRODUCTS.map(p=>`<article class="card"><div class="product-art"><div class="bottle"></div></div><span class="pill">${p.sku}</span><h3>${p.name}</h3><p class="muted">${p.detail}</p><div class="price">${money(p.price)}</div><button onclick="chooseProduct('${p.sku}')">สั่งซื้อสินค้านี้</button></article>`).join("");}
+function chooseProduct(sku){document.getElementById("sku").value=sku;document.getElementById("order").scrollIntoView({behavior:"smooth"});}
+function getOrders(){return JSON.parse(localStorage.getItem("annaOrders")||"[]");}
+function saveOrders(a){localStorage.setItem("annaOrders",JSON.stringify(a));}
+document.getElementById("orderForm").addEventListener("submit",async e=>{
+ e.preventDefault();const p=PRODUCTS.find(x=>x.sku===document.getElementById("sku").value);const qty=Number(document.getElementById("qty").value);
+ const order={id:"AN"+Date.now().toString().slice(-8),createdAt:new Date().toLocaleString("th-TH"),customer:document.getElementById("customer").value,phone:document.getElementById("phone").value,address:document.getElementById("address").value,sku:p.sku,product:p.name,qty,total:p.price*qty,payment:document.getElementById("payment").value,status:"รับคำสั่งซื้อแล้ว"};
+ const all=getOrders();all.unshift(order);saveOrders(all);document.getElementById("orderMessage").innerHTML=`<p class="pill">รับคำสั่งซื้อสำเร็จ เลขที่ ${order.id}</p>`;e.target.reset();document.getElementById("qty").value=1;renderOrders();
+ if(API_URL){try{await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"newOrder",order})});}catch(err){console.warn("ส่งข้อมูลไป Google Sheets ไม่สำเร็จ",err);}}
+});
+function updateStatus(id,status){const a=getOrders().map(o=>o.id===id?{...o,status}:o);saveOrders(a);renderOrders();}
+function renderOrders(){const a=getOrders();const el=document.getElementById("orders");if(!a.length){el.innerHTML="<p class='muted'>ยังไม่มีคำสั่งซื้อ ลองสั่งซื้อสินค้าด้านบนเพื่อทดสอบระบบ</p>";return;}
+el.innerHTML=a.map(o=>`<div class="order"><b>${o.id}</b> <span class="pill">${o.status}</span><p>${o.customer} · ${o.phone}</p><p>${o.product} (${o.sku}) × ${o.qty} = <b>${money(o.total)}</b></p><p class="muted">ที่อยู่จัดส่ง: ${o.address}<br>ชำระเงิน: ${o.payment} · ${o.createdAt}</p><label>อัปเดตขั้นตอน</label><select onchange="updateStatus('${o.id}',this.value)">${["รับคำสั่งซื้อแล้ว","กำลังหยิบสินค้า (Picking)","กำลังแพ็กสินค้า (Packing)","จัดส่งแล้ว","ส่งสำเร็จ"].map(s=>`<option ${o.status===s?"selected":""}>${s}</option>`).join("")}</select></div>`).join("");}
+renderProducts();renderOrders();
+</script>
+</body></html>
